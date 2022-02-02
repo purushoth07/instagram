@@ -1,0 +1,42 @@
+.header-md::after{
+    background-image: none;
+}
+
+ion-header{
+    ion-img{width:90px}
+    margin-top: -5px;
+}
+
+ion-content{
+    .commentBox{
+        margin-top:-10px;
+        p{
+            margin: 4px 0px 2px 15px;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #bababa !important;
+            font-size: 10px;
+        }
+        p:first-child{color:black !important}
+    }
+    .feedList{
+        .infoRow{
+            ion-img{
+                width: 30px;
+            height: 30px;
+            border-radius: 50% !important;
+            overflow: hidden;
+            background: black;
+            margin-right: 7px;
+            border: 2px solid orange;
+            }
+        }
+        .sharingRow{
+            height:40px;
+            ion-icon{font-size: 17px;padding-right:7px !important}
+            ion-icon:first-child{
+                font-size: 21px;
+            }
+        }
+    }
+}

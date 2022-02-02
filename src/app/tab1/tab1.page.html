@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png"></ion-img>
+      <ion-icon slot="end" name="duplicate-outline"></ion-icon>
+      <ion-icon slot="end" name="chatbubble-ellipses-outline"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list class="feedList" *ngFor="let feed of feedList">
+    <ion-item lines="none" class="infoRow">
+      <ion-img src="https://picsum.photos/536/354"></ion-img>
+      <ion-label>{{feed.name.first}} {{feed.name.last}}</ion-label>
+      <ion-icon slot="end" name="ellipsis-horizontal-outline"></ion-icon>
+    </ion-item>
+    <ion-img src="https://picsum.photos/536/354"></ion-img>
+    <ion-item lines="none" class="sharingRow">
+      <ion-icon name="heart-outline"></ion-icon>
+      <ion-icon name="chatbubble-outline"></ion-icon>
+      <ion-icon name="navigate-outline"></ion-icon>
+      <ion-icon slot="end" name="bookmark-outline"></ion-icon>
+    </ion-item>
+    <ion-list class="commentBox">
+        <p>10,222 likes</p>
+        <p><strong>{{feed.name.title}} {{feed.name.first}} {{feed.name.last}}</strong> {{feed.email}}</p>
+        <p>View all 23 comments</p>
+    </ion-list>
+  </ion-list>
+
+  
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Please wait">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
